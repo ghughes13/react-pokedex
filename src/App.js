@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import './App.css';
+import LeftCard from './LeftCard';
 
 export default function App() {
   
@@ -14,7 +15,7 @@ export default function App() {
   getZip();
   return (
     <div className="App">
-
+      <LeftCard />
     </div>
   );
 }
