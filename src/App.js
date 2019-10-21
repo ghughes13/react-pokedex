@@ -1,21 +1,26 @@
-import React from 'react';
+import React, {useState} from 'react';
 import axios from 'axios';
 import './App.css';
 import LeftCard from './LeftCard';
+import RightSide from './RightSide';
 
 export default function App() {
   
-  const getZip = () => {
-    console.log('hi');
+  const getPokeInfo = (num= 1) => {
+    let data;
       axios
-        .get("https://pokeapi.co/api/v2/pokemon/1/")
-        .then(result => console.log(result));
+        .get("https://pokeapi.co/api/v2/pokemon/" + num + "/")
+        .then(result => data = result)
+    return data;
   }
 
-  getZip();
+  const [pokeInfo, setpokeInfo] = useState([getPokeInfo(1)]);
+
+  console.log(pokeInfo);
   return (
     <div className="App">
       <LeftCard />
+      <RightSide pokeInfo={pokeInfo} />
     </div>
   );
 }

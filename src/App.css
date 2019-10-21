@@ -1,5 +1,10 @@
 .App {
   text-align: center;
+  display: flex;
+  max-width: 75vw;
+  margin: auto;
+  align-items: center;
+  height: 100vh;
 }
 
 .App-logo {
@@ -19,4 +24,33 @@
 
 .App-link {
   color: #09d3ac;
+}
+
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 650px;
+  justify-content: space-evenly;
+  background: #CBCBCB;
+  overflow-y: scroll;
+  max-height: 700px;
+}
+
+.pic-holder {    
+  height: 250px;
+  flex-basis: 35%;
+  width: 300px;
+  position: relative;
+  padding: 10px;
+  box-sizing: border-box;
+  background: white;
+  border-radius: 5px;
+  margin: 15px;
+  display: flex;
+  align-content: center;
+}
+
+img {
+  max-width: auto;
+  height: 100%;
 }

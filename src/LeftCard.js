@@ -13,10 +13,8 @@ export default class LeftCard extends React.Component {
             picUrls.push("https://assets.pokemon.com/assets/cms2/img/pokedex/full/" + i + ".png")
         }   
 
-        console.log(picUrls);
-
         const cards = picUrls.map((pic, index) => 
-            <div class="pic-holder">
+            <div className="pic-holder" key={index}>
                 <img src={pic} alt="pokemon img"/>
             </div>    
         )
