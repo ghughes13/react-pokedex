@@ -12,8 +12,13 @@ export default function App() {
       .then(result => setpokeInfo(result))
   }
 
+  const [pokeNum, setPokeNum] = useState(1);
   const [counter, setCounter] = useState(true);
   const [pokeInfo, setpokeInfo] = useState([]);
+
+  const updatePokeNumState = (num) => {
+    getPokeInfo(num);
+  }
 
   if(counter) {
     getPokeInfo();
@@ -27,7 +32,7 @@ export default function App() {
 
   return (
     <div className="App">
-      <LeftCard />
+      <LeftCard passfunct={updatePokeNumState} />
       <RightSide pokeInfo={pokeInfo} />
     </div>
   );
