@@ -12,7 +12,6 @@ export default function App() {
       .then(result => setpokeInfo(result))
   }
 
-  const [pokeNum, setPokeNum] = useState(1);
   const [counter, setCounter] = useState(true);
   const [pokeInfo, setpokeInfo] = useState([]);
 
@@ -22,7 +21,7 @@ export default function App() {
 
   if(counter) {
     getPokeInfo();
-    setCounter(false);;
+    setCounter(false);
     console.log(counter)
   }
 
