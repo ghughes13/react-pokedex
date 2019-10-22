@@ -5,18 +5,26 @@ import LeftCard from './LeftCard';
 import RightSide from './RightSide';
 
 export default function App() {
-  
+
   const getPokeInfo = (num= 1) => {
-    let data;
-      axios
-        .get("https://pokeapi.co/api/v2/pokemon/" + num + "/")
-        .then(result => data = result)
-    return data;
+    axios
+      .get("https://pokeapi.co/api/v2/pokemon/" + num + "/")
+      .then(result => setpokeInfo(result))
   }
 
-  const [pokeInfo, setpokeInfo] = useState([getPokeInfo(1)]);
+  const [counter, setCounter] = useState(true);
+  const [pokeInfo, setpokeInfo] = useState([]);
 
-  console.log(pokeInfo);
+  if(counter) {
+    getPokeInfo();
+    setCounter(false);;
+    console.log(counter)
+  }
+
+  while(pokeInfo.length === 0) {
+    return <h1>Loading</h1>;
+  } 
+
   return (
     <div className="App">
       <LeftCard />
