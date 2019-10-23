@@ -7,11 +7,19 @@ import RightSide from './RightSide';
 export default function App() {
 
   const getPokeInfo = (num= 1) => {
+    let pokeNum = num;
+    if(pokeNum < 10) {
+      pokeNum = '00' + pokeNum;
+    } else if(pokeNum < 100) {
+      pokeNum = "0" + pokeNum;
+    } 
     axios
       .get("https://pokeapi.co/api/v2/pokemon/" + num + "/")
       .then(result => setpokeInfo(result))
+      .then(setPokePic("https://assets.pokemon.com/assets/cms2/img/pokedex/full/" + pokeNum + ".png"))
   }
 
+  const [pokePic, setPokePic] = useState("https://assets.pokemon.com/assets/cms2/img/pokedex/full/0.png")
   const [counter, setCounter] = useState(true);
   const [pokeInfo, setpokeInfo] = useState([]);
 
@@ -22,7 +30,6 @@ export default function App() {
   if(counter) {
     getPokeInfo();
     setCounter(false);
-    console.log(counter)
   }
 
   while(pokeInfo.length === 0) {
@@ -32,7 +39,7 @@ export default function App() {
   return (
     <div className="App">
       <LeftCard passfunct={updatePokeNumState} />
-      <RightSide pokeInfo={pokeInfo} />
+      <RightSide pokeInfo={pokeInfo} pokePic={pokePic}/>
     </div>
   );
 }

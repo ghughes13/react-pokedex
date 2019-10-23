@@ -5,6 +5,12 @@
   margin: auto;
   align-items: center;
   height: 100vh;
+  background: #C23F3F;
+  padding-left: 25px;
+  padding-right: 25px;
+  margin-top: 4%;
+  margin-bottom: 25px;
+  max-height:800px;
 }
 
 .App-logo {
@@ -53,4 +59,9 @@
 img {
   max-width: auto;
   height: 100%;
+}
+
+.poke-pic img {
+  max-width: 200px;
+  height: auto;
 }

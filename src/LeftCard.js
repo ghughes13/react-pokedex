@@ -4,8 +4,6 @@ export default class LeftCard extends React.Component {
     render() {
         let picUrls = [];
 
-        console.log(this.props);
-
         for(let i = 1; i < 151; i++) {
             if(i < 10) {
                 i = '00' + i;
