@@ -11,6 +11,25 @@
   margin-top: 4%;
   margin-bottom: 25px;
   max-height:800px;
+  border: solid 2px black;
+  border-radius: 10px;
+  -webkit-box-shadow: 10px 10px 10px 0px rgba(0,0,0,0.55);
+  -moz-box-shadow: 10px 10px 10px 0px rgba(0,0,0,0.55);
+  box-shadow: 10px 10px 10px 0px rgba(0,0,0,0.55);
+  position: relative;
+}
+
+.App:after {
+  position: absolute;
+  content: '';
+  position: absolute;
+  content: '';
+  left: 0;
+  right: 0;
+  margin: auto;
+  height: 100%;
+  width: 3px;
+  background: #892c2c;
 }
 
 .App-logo {
@@ -32,14 +51,20 @@
   color: #09d3ac;
 }
 
+h2 {
+  text-transform: capitalize;
+}
+
 .cards-container {
   display: flex;
   flex-wrap: wrap;
-  max-width: 650px;
+  max-width: 666px;
   justify-content: space-evenly;
   background: #CBCBCB;
   overflow-y: scroll;
   max-height: 700px;
+  border: solid 2px black;
+  border-radius: 10px;
 }
 
 .pic-holder {    
@@ -59,6 +84,7 @@
 img {
   max-width: auto;
   height: 100%;
+  image-rendering: pixelated;
 }
 
 .poke-pic img {
@@ -68,5 +94,51 @@ img {
 
 canvas {
   display: block;
-  background: white;
+  background: #30A7D7;
+  width: 100%;
+  height: auto;
+}
+
+.pokeStats-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 45%;
+  margin-left: 5%;
+  justify-content: space-between;
+}
+
+.basic-info,
+.poke-pic {
+  flex-basis: 45%;
+  border-radius: 10px;
+  border: solid 2px black;
+}
+
+.base-stats {
+  flex-basis: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  border: solid 2px black;
+}
+
+.poke-pic {
+  background: #CBCBCB;
+  margin-bottom: 50px;
+  width: 250px;
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10px;
+}
+
+.basic-info {
+  background: #30A7D7;
+  margin-bottom: 50px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-right:10px;
 }

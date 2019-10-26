@@ -12,8 +12,8 @@ export default class RightSide extends React.Component {
                 datasets: [
                         {
                             label: "videos Made",
-                            backgroundColor: 'rgb(255, 99, 132)',
-                            borderColor: 'rgb(255, 99, 132)',
+                            backgroundColor: 'rgba(255, 255, 255, 1)',
+                            borderColor: 'rgba(255, 255, 255, 1)',
                             data: [0, 2, 3, 4, 5, 255 ]
                         }
                 ]
@@ -31,8 +31,8 @@ export default class RightSide extends React.Component {
                 }),
                 datasets: [
                     {
-                        backgroundColor: 'rgba(0, 0, 0, 0.1)',
-                        borderColor: 'rgba(0, 0, 0, 0.1)',
+                        backgroundColor: 'rgba(255, 255, 255, 1)',
+                        borderColor: 'rgba(255, 255, 255, 1)',
                         data: this.props.pokeInfo.data.stats.map((stat, index) => {
                             return stat.base_stat
                         })
@@ -51,8 +51,8 @@ export default class RightSide extends React.Component {
                 <div className="basic-info">
                     {/* {console.log(pokeInfo.data)} */}
                     <h2>{pokeInfo.data.species.name}</h2>
-                    <h2>#{pokeInfo.data.order}</h2>
-                    <h2>Weight: {pokeInfo.data.weight}<br/></h2>
+                    <h2>ID #{pokeInfo.data.order}</h2>
+                    <h2>Weight: {pokeInfo.data.weight}lbs<br/></h2>
                 </div>
                 <div className="poke-pic">
                     <img src={this.props.pokePic} alt="pic of pokemon"/>
