@@ -11,10 +11,9 @@ export default class RightSide extends React.Component {
                 labels: ['Sp','Spc Def','Spc Att', 'Def', 'Att', 'HP'],
                 datasets: [
                         {
-                            label: "videos Made",
                             backgroundColor: 'rgba(255, 255, 255, 1)',
                             borderColor: 'rgba(255, 255, 255, 1)',
-                            data: [0, 2, 3, 4, 5, 255 ]
+                            data: [0, 2, 3, 4, 5, 255]
                         }
                 ]
             }
@@ -26,7 +25,6 @@ export default class RightSide extends React.Component {
             this.setState({ data : { data: {
                 test: 'new test string;',
                 labels: this.props.pokeInfo.data.stats.map((stat, index) => {
-                    console.log(stat.base_stat);
                     return stat.stat.name;
                 }),
                 datasets: [
@@ -41,7 +39,6 @@ export default class RightSide extends React.Component {
                 }}}
             )
         }
-        console.log(this.state.data)    
     }
 
     render() {
@@ -49,7 +46,6 @@ export default class RightSide extends React.Component {
         return (
             <div className="pokeStats-container">
                 <div className="basic-info">
-                    {/* {console.log(pokeInfo.data)} */}
                     <h2>{pokeInfo.data.species.name}</h2>
                     <h2>ID #{pokeInfo.data.order}</h2>
                     <h2>Weight: {pokeInfo.data.weight}lbs<br/></h2>
