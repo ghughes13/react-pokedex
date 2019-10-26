@@ -8,13 +8,13 @@ export default class RightSide extends React.Component {
             pokeNum: this.props.pokeInfo.data.order,
             data: {
                 test: 'test string',
-                labels: ['test','test2','test2'],
+                labels: ['Sp','Spc Def','Spc Att', 'Def', 'Att', 'HP'],
                 datasets: [
                         {
                             label: "videos Made",
                             backgroundColor: 'rgb(255, 99, 132)',
                             borderColor: 'rgb(255, 99, 132)',
-                            data: [1, 2, 3, 4, 5, 6, 7 ]
+                            data: [0, 2, 3, 4, 5, 255 ]
                         }
                 ]
             }
@@ -22,24 +22,26 @@ export default class RightSide extends React.Component {
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {
-        console.log(prevProps, prevProps.day, this.props.prop, this.props.day);
-        if (prevProps.day !== this.props.day) {
-            this.setState({ day : prevProps.day})
+        if (prevProps !== this.props) {
             this.setState({ data : { data: {
                 test: 'new test string;',
-                labels: ['test','test2','test2', 'test5', 'test6', 'test7'],
+                labels: this.props.pokeInfo.data.stats.map((stat, index) => {
+                    console.log(stat.base_stat);
+                    return stat.stat.name;
+                }),
                 datasets: [
                     {
-                        label: "videos Made",
-                        backgroundColor: 'rgb(255, 99, 132)',
-                        borderColor: 'rgb(255, 99, 132)',
-                        data: [1, 2, 3, 4, 5, 6, 7 ]
+                        backgroundColor: 'rgba(0, 0, 0, 0.1)',
+                        borderColor: 'rgba(0, 0, 0, 0.1)',
+                        data: this.props.pokeInfo.data.stats.map((stat, index) => {
+                            return stat.base_stat
+                        })
                     }
                 ]
                 }}}
             )
         }
-        console.log(this.state.day)
+        console.log(this.state.data)    
     }
 
     render() {
