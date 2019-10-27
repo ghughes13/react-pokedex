@@ -19,19 +19,6 @@
   position: relative;
 }
 
-.App:after {
-  position: absolute;
-  content: '';
-  position: absolute;
-  content: '';
-  left: 0;
-  right: 0;
-  margin: auto;
-  height: 100%;
-  width: 3px;
-  background: #892c2c;
-}
-
 .App-logo {
   height: 40vmin;
 }
@@ -79,6 +66,10 @@ h2 {
   margin: 15px;
   display: flex;
   align-content: center;
+}
+
+.pic-holder img {
+  cursor: pointer;
 }
 
 img {
