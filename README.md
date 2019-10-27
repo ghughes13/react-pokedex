@@ -1,3 +1,5 @@
+See The Project https://xj76n.csb.app/
+
 React project that plugs into the pokeapi and builds a pokedex.
 
 Todo:
