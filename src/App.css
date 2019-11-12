@@ -49,9 +49,32 @@ h2 {
   justify-content: space-evenly;
   background: #CBCBCB;
   overflow-y: scroll;
-  max-height: 700px;
+  max-height: 80%;
   border: solid 2px black;
   border-radius: 10px;
+}
+
+
+.cards-container::-webkit-scrollbar {
+  width: 16px;
+  margin-top:100px;
+  overflow: hidden;
+  z-index: -999;
+}
+
+.cards-container::-webkit-scrollbar-track {
+  background: #CBCBCB;
+  width: 16px;
+  border-radius: 0 20px 20px 0;
+  overflow: hidden;
+  z-index: -999;
+}
+ 
+.cards-container::-webkit-scrollbar-thumb {
+  background: #30A7D7; 
+  width: 15px;
+  overflow: hidden;
+  z-index: -999;
 }
 
 .pic-holder {    
@@ -114,7 +137,7 @@ canvas {
 
 .poke-pic {
   background: #CBCBCB;
-  margin-bottom: 50px;
+  margin-bottom: 10%;
   width: 250px;
   height: 250px;
   display: flex;
@@ -125,11 +148,66 @@ canvas {
 
 .basic-info {
   background: #30A7D7;
-  margin-bottom: 50px;
+  margin-bottom: 10%;
   color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   margin-right:10px;
+}
+
+@media screen and (max-width: 1550px) {
+  .pokeStats-container {
+    justify-content: center;
+    max-height: 95%;
+  }
+
+  .poke-pic,
+  .basic-info {
+    flex-basis: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .cards-container {
+    max-height: 95%;
+  }
+  
+  .basic-info,
+  .poke-pic {
+    margin-bottom: 5%;
+  }
+
+  .basic-info {
+    padding: 25px;
+  }
+
+  h2 {
+    text-transform: capitalize;
+    margin-bottom: 5px;
+    margin-top: 5px;
+  }
+}
+
+@media screen and (max-width: 1472px) {
+
+}
+
+@media screen and (max-width: 767px) {
+
+  .pic-holder img {
+    cursor: pointer;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .pokeStats-container {
+    display: none;
+  }
+
+  .pic-holder {
+    height: 75%;
+    flex-basis: 75%;
+  }
 }
