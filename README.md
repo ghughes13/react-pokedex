@@ -1,4 +1,4 @@
-See The Project https://9tw1r.csb.app/
+See The Project https://ghughes-react-pokedex.herokuapp.com/
 
 React project that plugs into the pokeapi and builds a pokedex.
 
